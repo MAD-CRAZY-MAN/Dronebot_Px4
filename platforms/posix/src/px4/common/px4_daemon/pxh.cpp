@@ -279,7 +279,7 @@ void Pxh::_restore_term()
 void Pxh::_print_prompt()
 {
 	fflush(stdout);
-	printf("pxh> ");
+	printf("peach> ");
 	fflush(stdout);
 }
 
