@@ -169,6 +169,8 @@ RCUpdate::update_rc_functions()
 	_rc.function[rc_channels_s::RC_CHANNELS_FUNCTION_AUX_5] = _param_rc_map_aux5.get() - 1;
 	_rc.function[rc_channels_s::RC_CHANNELS_FUNCTION_AUX_6] = _param_rc_map_aux6.get() - 1;
 
+	_rc.function[rc_channels_s::RC_CHANNELS_FUNCTION_CAP] = _param_rc_map_cap_sw.get() -1;
+
 	for (int i = 0; i < rc_parameter_map_s::RC_PARAM_MAP_NCHAN; i++) {
 		_rc.function[rc_channels_s::RC_CHANNELS_FUNCTION_PARAM_1 + i] = _parameters.rc_map_param[i] - 1;
 	}
@@ -521,6 +523,8 @@ RCUpdate::Run()
 							      _param_rc_stab_th.get(), _param_rc_stab_th.get() < 0.f);
 			manual_control_setpoint.man_switch = get_rc_sw2pos_position(rc_channels_s::RC_CHANNELS_FUNCTION_MAN,
 							     _param_rc_man_th.get(), _param_rc_man_th.get() < 0.f);
+			manual_control_setpoint.cap_switch = get_rc_sw2pos_position(rc_channels_s::RC_CHANNELS_FUNCTION_CAP,
+							      _param_rc_cap_th.get(), _param_rc_cap_th.get() < 0.f);
 
 			/* publish manual_control_setpoint topic */
 			_manual_control_setpoint_pub.publish(manual_control_setpoint);

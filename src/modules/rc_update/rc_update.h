@@ -203,6 +203,8 @@ private:
 		(ParamInt<px4::params::RC_MAP_AUX5>) _param_rc_map_aux5,
 		(ParamInt<px4::params::RC_MAP_AUX6>) _param_rc_map_aux6,
 
+		(ParamInt<px4::params::RC_MAP_CAP_SW>) _param_rc_map_cap_sw,
+
 		(ParamInt<px4::params::RC_FAILS_THR>) _param_rc_fails_thr,
 
 		(ParamFloat<px4::params::RC_ASSIST_TH>) _param_rc_assist_th,
@@ -219,6 +221,7 @@ private:
 		(ParamFloat<px4::params::RC_STAB_TH>) _param_rc_stab_th,
 		(ParamFloat<px4::params::RC_MAN_TH>) _param_rc_man_th,
 		(ParamFloat<px4::params::RC_RETURN_TH>) _param_rc_return_th,
+		(ParamFloat<px4::params::RC_CAP_TH>) _param_rc_cap_th,
 
 		(ParamInt<px4::params::RC_CHAN_CNT>) _param_rc_chan_cnt
 	)
